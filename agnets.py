@@ -1,5 +1,5 @@
 from crewai import Agent
-
+from tools import yt_tool
 
 
 
@@ -15,7 +15,7 @@ blog_researcher = Agent(
     You are an expert in SEO and have a deep understanding of how to create content that ranks well in search engines.
     You are also an expert in content marketing and have a deep understanding of how to create content that converts.
     """,
-    tools = [],
+    tools = [yt_tool],
     allow_deligation = True
 
 )
