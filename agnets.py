@@ -1,13 +1,18 @@
 from crewai import Agent
 from tools import yt_tool
-
-
+from llm import llm
+from dotenv import load_dotenv 
+import os 
+load_dotenv()
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["OPEN_AI_MODEL_NAME"] = "gpt-4o"
 
 ## create a senior blog content researcher 
 blog_researcher = Agent(
     role ='Blog Researcher from Youtube Videos',
     goal = 'get the relevant video content fot the topic {topic} from YouTube Channel',
     verbose = True,
+    llm = llm,
     memory = True,
     backstory = """
     You are a senior blog content researcher with 5+ years of experience in the field.
