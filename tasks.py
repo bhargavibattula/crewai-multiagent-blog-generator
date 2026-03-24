@@ -19,3 +19,19 @@ research_task = Task(
     tools = [yt_tool],
     allow_deligation = True
 )
+
+write_task = Task(
+    description = """
+    get the info from youtube channel on topic {topic}
+    """,
+    expected_output = """
+    summarize the info from youtube channel on topic {topic} and create the content for the blog
+    """,
+    agent = blog_writer,
+    tools = [yt_tool],
+    allow_deligation = True,
+    async_execution = False,
+    output_file = 'new-blog-post.md'
+
+
+)
