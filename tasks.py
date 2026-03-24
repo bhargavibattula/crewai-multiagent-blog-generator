@@ -17,7 +17,7 @@ research_task = Task(
     """,
     agent = blog_researcher,
     tools = [yt_tool],
-    allow_deligation = True
+    allow_delegation = False,
 )
 
 write_task = Task(
@@ -29,7 +29,7 @@ write_task = Task(
     """,
     agent = blog_writer,
     tools = [yt_tool],
-    allow_deligation = True,
+    allow_delegation = False,
     async_execution = False,
     output_file = 'new-blog-post.md'
 
